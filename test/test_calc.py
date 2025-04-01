@@ -1,7 +1,11 @@
-from calc import calculate as calc
+from calc import get_recipe, strip_ingredients
 
-def test_calculate_returns_dict():
-    test_out = calc("Arrabiata")
-    print(test_out)
+def test_get_recipe_returns_dict():
+    test_out = get_recipe("Arrabiata")
     assert type(test_out) == dict
-    assert test_out["meals"][0]["strMeal"] == "Spicy Arrabiata Penne"
+    assert test_out["strMeal"] == "Spicy Arrabiata Penne"
+
+def test_strip_ingredients():
+    test_out = strip_ingredients('test_json.json')
+    print(test_out)
+    assert False
