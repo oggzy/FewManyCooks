@@ -8,5 +8,5 @@ def test_get_recipe_returns_dict():
 def test_strip_ingredients_reads_file():
     test_out = strip_ingredients('test/test_json.json')
     assert type(test_out) == dict
-    test_data = {"Hummus, commercial": "test"}
+    test_data = {"Hummus, commercial": "test","Tomatoes, grape, raw": "test"}
     assert test_out.keys() == test_data.keys()
