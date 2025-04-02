@@ -9,6 +9,7 @@ def strip_ingredients(file_name):
     with open(file_name,'r',encoding='utf-8') as f:
         ingredients_json = json.load(f)
         ingredients = ingredients_json["FoundationFoods"]
+        
     stripped_ingredients = { ingredient["description"] : 
                             {"portions": 
                             {portion["measureUnit"]["name"]: portion["gramWeight"] for portion in ingredient["foodPortions"]},
